@@ -143,8 +143,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/mjakeman/extension-manager.git",
-                    "tag": "v0.2.2",
-                    "commit": "d3db834025667fdaebca21a7f463a3fc56513e09"
+                    "tag": "v0.2.3",
+                    "commit": "bea21d0e83f3f0e657b78f66e40e9cf3b650d5ce"
                 }
             ]
         }
