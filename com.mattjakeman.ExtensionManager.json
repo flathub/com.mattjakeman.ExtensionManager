@@ -1,7 +1,7 @@
 {
     "app-id": "com.mattjakeman.ExtensionManager",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "42beta",
+    "runtime-version": "42",
     "sdk": "org.gnome.Sdk",
     "command": "extension-manager",
     "finish-args": [
@@ -58,7 +58,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/mjakeman/extension-manager.git",
-                    "commit": "9ce99ade89176ec8a7021812f584d3f36d42dc41"
+                    "commit": "34232b987b4a97864a51e1510cce56349a7183ed"
                 }
             ]
         }
