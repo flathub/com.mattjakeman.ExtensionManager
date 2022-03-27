@@ -1,7 +1,7 @@
 {
     "app-id": "com.mattjakeman.ExtensionManager",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "41",
+    "runtime-version": "42",
     "sdk": "org.gnome.Sdk",
     "command": "extension-manager",
     "finish-args": [
@@ -10,7 +10,8 @@
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland",
-        "--talk-name=org.gnome.Shell.Extensions"
+        "--talk-name=org.gnome.Shell.Extensions",
+        "--talk-name=org.gnome.SessionManager"
     ],
     "cleanup": [
         "/include",
@@ -25,113 +26,27 @@
     ],
     "modules": [
         {
-            "name": "libsass",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
-                "--libdir=/app/lib"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/lazka/libsass.git",
-                    "commit": "302397c0c8ae2d7ab02f45ea461c2c3d768f248e"
-                }
-            ]
-        },
-        {
-            "name": "sassc",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
-                "--libdir=/app/lib"
-            ],
-            "cleanup": [
-            	"/bin/sassc"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/lazka/sassc.git",
-                    "commit": "82803377c33247265d779af034eceb5949e78354"
-                }
-            ]
-        },
-        {
-            "name": "pango",
-            "buildsystem": "meson",
-            "cleanup": [
-            	"/bin/pango-*"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/pango.git",
-                    "tag": "1.50.3",
-                    "commit": "26aadb2508f9022cbfc72e73b558c6791f5d46d9"
-                }
-            ]
-        },
-        {
-            "name": "gtk",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dbuild-examples=false",
-                "-Dbuild-tests=false"
-            ],
-            "cleanup": [
-            	"/bin/gtk4-*"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/gtk.git",
-                    "tag": "4.6.0",
-                    "commit": "70cb61fb7104c76a15bc6494a10e6ff1d470f6d8"
-                }
-            ]
-        },
-        {
-            "name": "libadwaita",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dexamples=false",
-                "-Dtests=false"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/libadwaita.git",
-                    "tag": "1.0.1",
-                    "commit": "b274a0c32c51a92692e3b282f04e88f033ba73b1"
-                }
-            ]
-        },
-        {
-            "name": "libsoup",
-            "builddir": true,
-            "buildsystem": "meson",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/libsoup.git",
-                    "tag": "3.0.4",
-                    "commit": "25a728020c4b53b5db4c4c675070e92f947fbd4d"
-                }
-            ]
-        },
-        {
             "name": "blueprint-compiler",
             "builddir": true,
             "buildsystem": "meson",
-            "cleanup": [
-            	"/bin/blueprint-compiler"
-            ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-                    "commit": "98bb9e30082774952c4cdfabac53b4d3e09c88ba"
+                    "commit": "6576e0283757a58f92227811874406e025dbd98a"
+                }
+            ]
+        },
+        {
+            "name": "text-engine",
+            "builddir": true,
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/mjakeman/text-engine.git",
+                    "commit": "379437b2b589a9414985dec9136b7b48bae76f9e",
+                    "tag": "v0.1.0"
                 }
             ]
         },
@@ -143,8 +58,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/mjakeman/extension-manager.git",
-                    "tag": "v0.2.3",
-                    "commit": "bea21d0e83f3f0e657b78f66e40e9cf3b650d5ce"
+                    "commit": "b34b18ce99700cb6612c208f42fd63587f570f77",
+                    "tag": "v0.3.0"
                 }
             ]
         }
