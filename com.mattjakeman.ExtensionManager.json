@@ -70,7 +70,7 @@
             "build-options" : {
             	"no-debuginfo" : true
             },
-            "config-opts" : [ "-Ddevelopment=true" ],
+            "config-opts" : [ "-Ddevelopment=false" ],
             "sources" : [
                 {
                     "type" : "git",
