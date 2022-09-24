@@ -1,7 +1,7 @@
 {
     "app-id": "com.mattjakeman.ExtensionManager",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "43beta",
+    "runtime-version": "43",
     "sdk": "org.gnome.Sdk",
     "command": "extension-manager",
     "finish-args": [
@@ -46,7 +46,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ianlancetaylor/libbacktrace.git",
-                    "branch": "master"
+                    "commit": "8602fda64e78f1f46563220f2ee9f7e70819c51d"
                 }
             ]
         },
@@ -75,7 +75,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/mjakeman/extension-manager",
-                    "commit" : "de275e9bde5baf0b0e46c563bf5aab0bd87b6daf"
+                    "commit" : "fbb564bb99100df6b2633fdaf15cca032f1bcf0f"
                 }
             ]
         }
