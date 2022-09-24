@@ -1,7 +1,7 @@
 {
     "app-id": "com.mattjakeman.ExtensionManager",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "42",
+    "runtime-version": "43",
     "sdk": "org.gnome.Sdk",
     "command": "extension-manager",
     "finish-args": [
@@ -33,7 +33,20 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-                    "commit": "6576e0283757a58f92227811874406e025dbd98a"
+                    "commit": "87cedc2c7e48b01dc1b07aef937e2fe02111b18c",
+                    "tag": "v0.2.0"
+                }
+            ]
+        },
+        {
+            "name": "libbacktrace",
+            "builddir": true,
+            "buildsystem": "autotools",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/ianlancetaylor/libbacktrace.git",
+                    "commit": "8602fda64e78f1f46563220f2ee9f7e70819c51d"
                 }
             ]
         },
@@ -51,14 +64,18 @@
             ]
         },
         {
-            "name": "extension-manager",
-            "builddir": true,
-            "buildsystem": "meson",
-            "sources": [
+            "name" : "extension-manager",
+            "builddir" : true,
+            "buildsystem" : "meson",
+            "build-options" : {
+            	"no-debuginfo" : true
+            },
+            "config-opts" : [ "-Ddevelopment=false" ],
+            "sources" : [
                 {
-                    "type": "git",
-                    "url": "https://github.com/mjakeman/extension-manager.git",
-                    "commit": "34232b987b4a97864a51e1510cce56349a7183ed"
+                    "type" : "git",
+                    "url" : "https://github.com/mjakeman/extension-manager",
+                    "commit" : "fbb564bb99100df6b2633fdaf15cca032f1bcf0f"
                 }
             ]
         }
