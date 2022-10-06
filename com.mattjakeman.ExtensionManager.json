@@ -1,7 +1,7 @@
 {
     "app-id": "com.mattjakeman.ExtensionManager",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "42",
+    "runtime-version": "43",
     "sdk": "org.gnome.Sdk",
     "command": "extension-manager",
     "finish-args": [
@@ -39,6 +39,18 @@
             ]
         },
         {
+            "name": "libbacktrace",
+            "builddir": true,
+            "buildsystem": "autotools",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/ianlancetaylor/libbacktrace.git",
+                    "commit": "8602fda64e78f1f46563220f2ee9f7e70819c51d"
+                }
+            ]
+        },
+        {
             "name": "text-engine",
             "builddir": true,
             "buildsystem": "meson",
@@ -52,15 +64,19 @@
             ]
         },
         {
-            "name": "extension-manager",
-            "builddir": true,
-            "buildsystem": "meson",
-            "sources": [
+            "name" : "extension-manager",
+            "builddir" : true,
+            "buildsystem" : "meson",
+            "build-options" : {
+            	"no-debuginfo" : true
+            },
+            "config-opts" : [ "-Ddevelopment=false" ],
+            "sources" : [
                 {
-                    "type": "git",
-                    "url": "https://github.com/mjakeman/extension-manager.git",
-                    "commit": "ce75cfd14a8ed119f4769a8e124576327e540df0",
-                    "tag": "v0.3.2"
+                    "type" : "git",
+                    "url" : "https://github.com/mjakeman/extension-manager",
+                    "commit" : "87bd7d0ebd21730c921a5d4604329c86c6be1688",
+                    "tag" : "v0.4.0"
                 }
             ]
         }
