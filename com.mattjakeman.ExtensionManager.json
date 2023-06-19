@@ -70,13 +70,13 @@
             "build-options" : {
                 "no-debuginfo" : true
             },
-            "config-opts" : [ "-Ddevelopment=false" ],
+            "config-opts" : [ "-Ddevelopment=false", "-Dofficial=true" ],
             "sources" : [
                 {
                     "type" : "git",
                     "url" : "https://github.com/mjakeman/extension-manager",
-                    "commit" : "87bd7d0ebd21730c921a5d4604329c86c6be1688",
-                    "tag" : "v0.4.0"
+                    "commit" : "53c3008781d9f21c1f1be9d92575afb0740790f8",
+                    "tag" : "v0.4.2"
                 }
             ]
         }
