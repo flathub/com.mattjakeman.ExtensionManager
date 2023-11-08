@@ -1,7 +1,7 @@
 {
     "app-id": "com.mattjakeman.ExtensionManager",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "44",
+    "runtime-version": "45",
     "sdk": "org.gnome.Sdk",
     "command": "extension-manager",
     "finish-args": [
@@ -26,18 +26,37 @@
     ],
     "modules": [
         {
+            "name" : "webp-pixbuf-loader",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "-Dgdk_pixbuf_moduledir=/app/lib/gdk-pixbuf-2.0/2.10.0/loaders/"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/aruiz/webp-pixbuf-loader.git",
+                    "tag" : "0.2.4"
+                }
+            ]
+        },
+        {
+            "name" : "update-pixbuf-loaders",
+            "buildsystem" : "simple",
+            "build-commands" : [
+                "GDK_PIXBUF_MODULEDIR=/app/lib/gdk-pixbuf-2.0/2.10.0/loaders/ gdk-pixbuf-query-loaders > /app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache",
+                "gdk-pixbuf-query-loaders >> /app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
+            ]
+        },
+    	{
             "name": "blueprint-compiler",
             "builddir": true,
             "buildsystem": "meson",
-            "cleanup": [
-                "*"
-            ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-                    "commit": "9adcab2d225fd6435edc85c72a0b67e33880e00b",
-                    "tag": "v0.6.0"
+                    "commit": "2a39a16391122af2f3d812e478c1c1398c98b972",
+                    "tag": "v0.10.0"
                 }
             ]
         },
@@ -49,7 +68,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ianlancetaylor/libbacktrace.git",
-                    "commit": "8602fda64e78f1f46563220f2ee9f7e70819c51d"
+                    "commit": "9ae4f4ae4481b1e69d38ed810980d33103544613"
                 }
             ]
         },
@@ -61,8 +80,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/mjakeman/text-engine.git",
-                    "commit": "e2d304e0c81bf0c3138133183a139dcf3da819f1",
-                    "tag": "v0.1.1"
+                    "commit": "379437b2b589a9414985dec9136b7b48bae76f9e",
+                    "tag": "v0.1.0"
                 }
             ]
         },
@@ -78,8 +97,8 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/mjakeman/extension-manager",
-                    "commit" : "53c3008781d9f21c1f1be9d92575afb0740790f8",
-                    "tag" : "v0.4.2"
+                    "commit" : "fce0e326dbddaf6ae17df79c01e553f4b73e3015",
+                    "tag" : "v0.4.3"
                 }
             ]
         }
