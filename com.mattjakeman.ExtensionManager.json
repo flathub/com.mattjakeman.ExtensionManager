@@ -11,8 +11,7 @@
         "--device=dri",
         "--socket=wayland",
         "--talk-name=org.gnome.Shell.Extensions",
-        "--talk-name=org.gnome.SessionManager",
-        "--env=GDK_PIXBUF_MODULE_FILE=/app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
+        "--talk-name=org.gnome.SessionManager"
     ],
     "cleanup" : [
         "/include",
