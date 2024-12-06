@@ -1,7 +1,7 @@
 {
     "id" : "com.mattjakeman.ExtensionManager",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "46",
+    "runtime-version" : "47",
     "sdk" : "org.gnome.Sdk",
     "command" : "extension-manager",
     "finish-args" : [
@@ -36,8 +36,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-                    "commit" : "66b43c36cf1017c878762007373964a096b3d2a5",
-                    "tag" : "v0.12.0"
+                    "commit" : "8e10fcf8692108b9d4ab78f41086c5d7773ef864",
+                    "tag" : "v0.14.0"
                 }
             ]
         },
@@ -50,19 +50,6 @@
                     "type" : "git",
                     "url" : "https://github.com/ianlancetaylor/libbacktrace.git",
                     "commit" : "9ae4f4ae4481b1e69d38ed810980d33103544613"
-                }
-            ]
-        },
-        {
-            "name" : "text-engine",
-            "builddir" : true,
-            "buildsystem" : "meson",
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://github.com/mjakeman/text-engine.git",
-                    "commit" : "379437b2b589a9414985dec9136b7b48bae76f9e",
-                    "tag" : "v0.1.0"
                 }
             ]
         },
@@ -83,8 +70,8 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/mjakeman/extension-manager",
-                    "commit" : "48acca4fee4afef0da3f8ddbe8f1d8a5553c782a",
-                    "tag" : "v0.5.1"
+                    "commit" : "62f3759e10cfd21014c805dc75645947569d48a9",
+                    "tag" : "v0.6.0"
                 }
             ]
         }
