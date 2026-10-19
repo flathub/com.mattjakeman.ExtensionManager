@@ -1,7 +1,7 @@
 {
     "id" : "com.mattjakeman.ExtensionManager",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "50",
+    "runtime-version" : "51",
     "sdk" : "org.gnome.Sdk",
     "command" : "extension-manager",
     "finish-args" : [
@@ -25,7 +25,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/ianlancetaylor/libbacktrace.git",
-                    "commit" : "549b81b43b46c0f361680561a626bf0e7b79dcbd"
+                    "commit" : "0b9b49cf4a2c9229fc052d6716e1528b2f23e91a"
                 }
             ]
         },
