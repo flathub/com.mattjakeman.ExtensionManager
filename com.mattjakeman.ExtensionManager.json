@@ -1,7 +1,7 @@
 {
     "id" : "com.mattjakeman.ExtensionManager",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "50",
+    "runtime-version" : "51",
     "sdk" : "org.gnome.Sdk",
     "command" : "extension-manager",
     "finish-args" : [
@@ -11,21 +11,30 @@
         "--device=dri",
         "--socket=wayland",
         "--talk-name=org.gnome.Shell.Extensions",
-        "--talk-name=org.gnome.SessionManager"
+        "--talk-name=org.gnome.SessionManager",
+        "--filesystem=~/.local/share/gnome-shell/extensions"
     ],
     "cleanup" : [
         "/include",
+        "/lib/pkgconfig",
+        "/man",
+        "/share/doc",
+        "/share/gtk-doc",
+        "/share/man",
+        "/share/pkgconfig",
         "*.la",
         "*.a"
     ],
     "modules" : [
         {
             "name" : "libbacktrace",
+            "builddir" : true,
+            "buildsystem" : "autotools",
             "sources" : [
                 {
                     "type" : "git",
                     "url" : "https://github.com/ianlancetaylor/libbacktrace.git",
-                    "commit" : "549b81b43b46c0f361680561a626bf0e7b79dcbd"
+                    "commit" : "0b9b49cf4a2c9229fc052d6716e1528b2f23e91a"
                 }
             ]
         },
@@ -46,8 +55,8 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/mjakeman/extension-manager",
-                    "commit" : "0a3f6c96f9fe0fd10c57987007f5c27397ed8632",
-                    "tag" : "v0.6.5",
+                    "commit" : "07fa3c852ef2038cd969a5519496695045aff54a",
+                    "tag" : "v0.7.0",
                     "x-checker-data" : {
                         "type" : "git",
                         "tag-pattern" : "^v([\\d.]+)$"
